@@ -1,0 +1,6 @@
+-DDEBUG
+-std=c11
+-nostdlib
+-nodefaultlibs
+-I
+./src
