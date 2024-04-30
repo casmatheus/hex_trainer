@@ -1,5 +1,4 @@
-# Hext - Repeated Practice Hex Decoding
-
+# Hext
 ## Usage:
 hext [Options]
 #### Options:
