@@ -6,7 +6,7 @@ hext [Options]
 - `-h`: Print This Text
 #### REPL Commands:
 - `q | quit`: Quit
-- `w<1 | 2 | 4 | 8>`: Change Hex Value Byte Width
+- `w<1 | 2 | 4 | 8>`: Set Byte Width
 - `h`: Print This Text
 
 ## Example Session:
