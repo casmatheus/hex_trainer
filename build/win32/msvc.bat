@@ -2,14 +2,14 @@
 setlocal
 
 if "%1" == "clean" (
-  del /q msvc_main.exe 2> nul
-  del /q msvc_main.pdb 2> nul
+  del /q hext_debug.exe 2> nul
+  del /q hext_debug.pdb 2> nul
 
   del /q build.obj 2> nul
 
   del /q *.nativecodeanalysis.xml 2> nul
 
-  del /q msvc_main_release.exe 2> nul
+  del /q hext.exe 2> nul
   exit /b 0
 )
 
@@ -19,10 +19,10 @@ set link_common=/incremental:no
 
 if "%1" == "release" (
   echo Compiling MSVC [Release] Build..
-  cl.exe %cl_common% /O2 /GS- /Fe"msvc_main_release.exe" src/build.c /link %link_common% /opt:ref /opt:icf 
+  cl.exe %cl_common% /O2 /GS- /Fe"hext.exe" src/build.c /link %link_common% /opt:ref /opt:icf 
 ) else (
   echo Compiling MSVC [Debug] Build..
-  cl.exe %cl_common% /Z7 /RTCcsu /Qspectre /Wall /WX /W4 /DDEBUG /external:W0 /sdl /analyze /Fe"msvc_main.exe" src/build.c /link %link_common% /WX
+  cl.exe %cl_common% /Z7 /RTCcsu /Qspectre /Wall /WX /W4 /DDEBUG /external:W0 /sdl /analyze /Fe"hext_debug.exe" src/build.c /link %link_common% /WX
 )
 
 echo.
